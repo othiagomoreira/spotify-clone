@@ -1,13 +1,19 @@
 import { Input, InputGroup, InputLeftElement } from '@chakra-ui/react';
-import { Ri24HoursFill } from 'react-icons/ri';
+import { FiCircle } from 'react-icons/fi';
 
 export const Search = () => {
   return (
     <InputGroup>
       <InputLeftElement pointerEvents="none">
-        {<Ri24HoursFill />}
+        {<FiCircle color="#77777" fontSize={18} />}
       </InputLeftElement>
-      <Input type="search" placeholder="Search..." />
+      <Input
+        type="text"
+        border="none"
+        color="gray.50"
+        placeholder="Search..."
+        _placeholder={{ color: 'inherit' }}
+      />
     </InputGroup>
   );
 };

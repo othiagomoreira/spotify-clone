@@ -1,8 +1,9 @@
-import { Box, Flex } from '@chakra-ui/react';
 import Head from 'next/head';
+import { Flex } from '@chakra-ui/react';
 import { Header } from '../components/Header';
 import { Main } from '../components/Main';
 import { Sidebar } from '../components/Sidebar';
+import { SidebarProvider } from '../contexts/SidebarContext';
 
 const Home = () => {
   return (
@@ -11,14 +12,9 @@ const Home = () => {
         <title>Spotify</title>
       </Head>
 
-      <Flex gap="8">
+      <SidebarProvider>
         <Sidebar />
-
-        <Flex flex="1" flexDir="column">
-          <Header />
-          <Main />
-        </Flex>
-      </Flex>
+      </SidebarProvider>
     </>
   );
 };
